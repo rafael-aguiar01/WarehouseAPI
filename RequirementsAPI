@@ -1,7 +1,9 @@
 # Cadastro do produto ( Tabela Produto )
+    -> Deve ser possível cadastrar um produto
 
 # Cadastro de endereço ( Tabela Endereço )
-
+    -> Deve ser possível cadastrar um endereço
+    
 # Entrada no estoque ( )
     -> Deve ser possível dar entrada em um produto no Estoque
 
