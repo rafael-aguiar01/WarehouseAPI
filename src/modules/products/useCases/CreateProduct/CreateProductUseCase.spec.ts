@@ -1,5 +1,5 @@
 import { ProductsRepositoryInMemory } from "@modules/products/repositories/in-memory/ProductsRepositoryInMemory";
-import { CreateNewProductUseCase } from "./CreateNewProductUseCase";
+import { CreateNewProductUseCase } from "./CreateProductUseCase";
 
 let createNewProductUseCase: CreateNewProductUseCase;
 let productsRepositoryInMemory: ProductsRepositoryInMemory;

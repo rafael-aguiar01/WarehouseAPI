@@ -6,14 +6,6 @@
     -> Não deve ser possível cadastrar uma unidade que já exista [ ]
     -> Não deve ser possível excluir uma unidade que foi lançada em uma movimentação [ ]
 
-# Cadastro de armazén
-    -> Deve ser possível cadastrar um armazém [ ]
-    -> Deve ser possível excluir um armazém [ ]
-    -> Deve ser possível alterar um armazém [ ]
-
-    -> Não deve ser possível cadastrar um armazén que já exista [ ]
-    -> Não deve ser possível excluir um armazém que foi lançado em uma movimentação [ ]
-
 # Cadastro do produto
     -> Deve ser possível cadastrar um produto [  ]
     -> Deve ser possível alterar um produto [  ]
@@ -21,6 +13,14 @@
 
     -> Não deve ser possível cadastrar um produto que já exista [ ]
     -> Não deve ser possível excluir um produto que foi lançado em uma movimentação [ ]
+
+# Cadastro de armazén
+    -> Deve ser possível cadastrar um armazém [ ]
+    -> Deve ser possível excluir um armazém [ ]
+    -> Deve ser possível alterar um armazém [ ]
+
+    -> Não deve ser possível cadastrar um armazén que já exista [ ]
+    -> Não deve ser possível excluir um armazém que foi lançado em uma movimentação [ ]
 
 # Cadastro de endereço 
     -> Deve ser possível cadastrar um endereço [  ]

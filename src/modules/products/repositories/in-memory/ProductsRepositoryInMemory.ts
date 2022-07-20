@@ -19,7 +19,6 @@ class ProductsRepositoryInMemory implements IProductsRepository{
         const product = this.products.find((product) => product.name === name);
         return product;
     }
-
 }
 
 export { ProductsRepositoryInMemory }
