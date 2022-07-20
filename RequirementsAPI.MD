@@ -28,7 +28,7 @@
     -> Deve ser possível excluir um endereço  [  ]
 
     -> Não deve ser possível cadastrar um enedreço que já exista [ ]
-    -> Não deve ser possível excluir um endereço que foi lançado em uma movimentação [ ]
+    -> Não deve ser possível excluir um endereço quegi foi lançado em uma movimentação [ ]
 
 # Tipo do movimento ( )
     -> Deve ser possível cadastrar um tipo de movimento [  ]
