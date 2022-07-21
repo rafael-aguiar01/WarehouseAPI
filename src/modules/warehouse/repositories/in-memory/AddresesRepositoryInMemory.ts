@@ -12,7 +12,7 @@ class AddressRepositoryInMemory implements IAddressRepository {
             name,
         });
 
-        this.addreses.push(address)
+        this.addreses.push(address);
     }
     
     async findByName(name: string): Promise<Address> {

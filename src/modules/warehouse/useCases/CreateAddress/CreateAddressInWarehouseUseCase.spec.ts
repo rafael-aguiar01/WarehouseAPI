@@ -14,7 +14,7 @@ describe( 'Create Address', () =>{
         );
     })
 
-    it('should be able to creat a new address', async() => {
+    it('should be able to create a new address', async() => {
         const address = {
             name: "12B-X7"
         };
