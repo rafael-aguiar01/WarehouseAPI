@@ -16,12 +16,16 @@ describe ('Create Product', () => {
     it('should be able to create a new product', async() =>{
         const product = {
             name: 'Product Test',
-            description: 'Production description test'
+            type: '1',
+            unit: '1',
+            storehouse: '1',
         };
 
         await createNewProductUseCase.execute({
             name: product.name,
-            description: product.description
+            type: product.type,
+            unit: product.unit,
+            storehouse: product.storehouse
         })
         
         const productCreated = await productsRepositoryInMemory.findByName(
@@ -29,5 +33,8 @@ describe ('Create Product', () => {
         )
 
         expect(productCreated).toHaveProperty('id')
+        expect(productCreated).toHaveProperty('type')
+        expect(productCreated).toHaveProperty('unit')
+        expect(productCreated).toHaveProperty('storehouse')
     })
 });

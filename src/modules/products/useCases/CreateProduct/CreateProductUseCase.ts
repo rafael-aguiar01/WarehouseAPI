@@ -2,7 +2,9 @@ import { IProductsRepository } from "@modules/products/repositories/IProductsRep
 
 interface IRequest {
     name: string;
-    description: string;
+    type: string;
+    unit: string;
+    storehouse: string;
 }
 
 class CreateNewProductUseCase {
@@ -11,8 +13,8 @@ class CreateNewProductUseCase {
         private productsRepository: IProductsRepository
     ){}
     
-    async execute({ description, name}: IRequest): Promise<void>{
-        this.productsRepository.create( { name, description });
+    async execute({name, type, unit, storehouse}: IRequest): Promise<void>{
+        this.productsRepository.create( { name, type, unit, storehouse  });
     }
 }
 

@@ -5,11 +5,11 @@ class ProductsRepositoryInMemory implements IProductsRepository{
 
     products: Product[] = [];
 
-    async create({ name, description}: ICreateProductDTO): Promise<void>{
+    async create({ name, type, unit, storehouse}: ICreateProductDTO): Promise<void>{
         const product = new Product();
 
         Object.assign(product, {
-            name, description
+            name, type, unit, storehouse
         });
 
         this.products.push(product);

@@ -3,9 +3,13 @@ import { v4 as uuidv4 } from 'uuid';
 class Product {
     id?: string;
 
-    name: string;    
+    name: string;
+    
+    type: string;
 
-    description: string;
+    unit: string;
+
+    storehouse: string;
 
     created_at: Date;
 

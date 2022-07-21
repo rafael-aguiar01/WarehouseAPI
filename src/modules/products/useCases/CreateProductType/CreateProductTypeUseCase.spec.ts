@@ -27,5 +27,6 @@ describe('Create Product Type', () => {
         )
 
         expect(productTypeCreated).toHaveProperty('id')
+
     })
 })
