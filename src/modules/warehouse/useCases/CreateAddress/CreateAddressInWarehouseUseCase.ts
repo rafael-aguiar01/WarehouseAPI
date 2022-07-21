@@ -1,4 +1,4 @@
-import { IAddressRepository } from "@modules/warehouse/repositories/in-memory/IAddresesRepository";
+import { IAddressRepository } from "@modules/warehouse/repositories/IAddresesRepository";
 
 interface IRequest {
     name: string;

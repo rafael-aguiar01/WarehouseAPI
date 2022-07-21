@@ -1,5 +1,5 @@
 import { Address } from "@modules/warehouse/infra/typeorm/entities/Address";
-import { IAddressRepository,  ICreateAddressDTO } from "./IAddresesRepository";
+import { IAddressRepository,  ICreateAddressDTO } from "../IAddresesRepository";
 
 class AddressRepositoryInMemory implements IAddressRepository {
 
