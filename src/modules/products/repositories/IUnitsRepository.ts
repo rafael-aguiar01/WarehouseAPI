@@ -4,9 +4,14 @@ interface ICreatUnityDTO{
     description: string;
 }
 
+interface IDeleteUnityDTO{
+    id: string;
+}
+
 interface IUnitsRepository {
     findByDescription(description: string): Promise<Unity>;
     create({ description }: ICreatUnityDTO): Promise<void>;
+    delete({ id }: IDeleteUnityDTO): Promise<void>;
 }
 
-export { ICreatUnityDTO, IUnitsRepository }
+export { ICreatUnityDTO, IUnitsRepository, IDeleteUnityDTO }

@@ -1,5 +1,5 @@
 import { Unity } from "@modules/products/infra/typeorm/entities/Unity";
-import { IUnitsRepository, ICreatUnityDTO } from "../IUnitsRepository";
+import { IUnitsRepository, ICreatUnityDTO, IDeleteUnityDTO } from "../IUnitsRepository";
 
 class UnitsRepositoryInMemory implements IUnitsRepository {
 
@@ -19,6 +19,12 @@ class UnitsRepositoryInMemory implements IUnitsRepository {
         const unit = this.units.find((unit) => unit.description === description);
         return unit;
     }
+
+    async delete({ id }: IDeleteUnityDTO): Promise<void> {
+        const newunits = this.units.filter((unit) => unit.id !== id)
+        this.units = newunits;
+    }
+
 }
 
 export { UnitsRepositoryInMemory }
