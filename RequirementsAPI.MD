@@ -30,6 +30,14 @@
     -> Não deve ser possível cadastrar um enedreço que já exista [ ]
     -> Não deve ser possível excluir um endereço quegi foi lançado em uma movimentação [ ]
 
+# Cadastro do tipo do produto 
+    -> Deve ser possível cadastrar um tipo do produto  [ ]
+    -> Deve ser possível alterar um tipo do produto  [  ]
+    -> Deve ser possível excluir um tipo do produto   [  ]
+
+    -> Não deve ser possível cadastrar um tipo do produto  que já exista [ ]
+    -> Não deve ser possível excluir um tipo do produto  quegi foi lançado em uma movimentação [ ]
+
 # Tipo do movimento ( )
     -> Deve ser possível cadastrar um tipo de movimento [  ]
     -> Deve ser possível alterar um tipo de movimento [  ]
