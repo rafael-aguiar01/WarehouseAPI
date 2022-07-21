@@ -39,6 +39,7 @@ describe('Delete Unit', () =>{
         unitCreated = await unitsRepositoryInMemory.findByDescription(
             unit.description,
         )
+        
 
         expect(unitCreated).toEqual(undefined)
     })
