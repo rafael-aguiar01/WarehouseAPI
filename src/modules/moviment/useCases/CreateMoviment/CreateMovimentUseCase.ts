@@ -1,5 +1,6 @@
 import { IMovimentsRepository } from "@modules/moviment/repositories/IMovimentsRepository";
 
+
 interface IRequest {
     description: string;
     type_moviment: string;
@@ -29,6 +30,7 @@ class CreateMovimentUseCase {
             address_id
         })
     }
+
 }
 
 export { CreateMovimentUseCase }

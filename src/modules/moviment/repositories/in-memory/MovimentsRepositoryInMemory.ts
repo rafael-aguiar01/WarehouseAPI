@@ -1,9 +1,11 @@
 import { Moviment } from "@modules/moviment/infra/typeorm/entities/Moviment";
 import { ICreateMovimentDTO, IMovimentsRepository } from "../IMovimentsRepository";
+import { BalancesRepositoryInMemory } from "./BalancesRepositoryInMemory";
 
 class MovimentsRepositoryInMemory implements IMovimentsRepository {
     moviments: Moviment[] = []
-
+    balancesrepositoryInMemory = new BalancesRepositoryInMemory()
+    
     async create({  description,
                     type_moviment, 
                     product_id, 
@@ -21,6 +23,7 @@ class MovimentsRepositoryInMemory implements IMovimentsRepository {
         });
 
         this.moviments.push(moviment)
+        
     }
 
     async findByDescription(description: string): Promise<Moviment> {
