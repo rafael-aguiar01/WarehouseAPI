@@ -1,5 +1,5 @@
 import { MovimentType } from "@modules/moviment/infra/typeorm/entities/MovimentType";
-import { ICreateMovimentTypeDTO, IMovimentTypesRepository } from "../IMovimentTypes";
+import { ICreateMovimentTypeDTO, IMovimentTypesRepository } from "../IMovimentsTypes";
 
 class MovimentTypeRespositoryInMemory implements IMovimentTypesRepository {
     
@@ -20,8 +20,6 @@ class MovimentTypeRespositoryInMemory implements IMovimentTypesRepository {
         const movimentType = this.movimentTypes.find((movimentType) => movimentType.description === description);
         return movimentType;
     }
-
-
 }
 
 export { MovimentTypeRespositoryInMemory }

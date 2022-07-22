@@ -1,4 +1,4 @@
-import { IMovimentTypesRepository } from "@modules/moviment/repositories/IMovimentTypes";
+import { IMovimentTypesRepository } from "@modules/moviment/repositories/IMovimentsTypes";
 
 interface IRequest {
     description: string;

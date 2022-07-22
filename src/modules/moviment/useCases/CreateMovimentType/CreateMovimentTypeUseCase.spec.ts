@@ -1,6 +1,5 @@
-import { MovimentTypeRespositoryInMemory } from "@modules/moviment/repositories/in-memory/MovimentTypesRepositoryInMemory";
+import { MovimentTypeRespositoryInMemory } from "@modules/moviment/repositories/in-memory/MovimentsTypesRepositoryInMemory";
 import { CreateMovimentTypeUseCase } from "./CreateMovimentTypeUseCase";
-
 
 let createMovimentTypeUseCase: CreateMovimentTypeUseCase;
 let movimentTypeInMemory: MovimentTypeRespositoryInMemory;
