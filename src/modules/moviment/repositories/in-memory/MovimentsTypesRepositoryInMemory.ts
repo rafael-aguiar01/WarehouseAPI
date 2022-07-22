@@ -1,5 +1,5 @@
 import { MovimentType } from "@modules/moviment/infra/typeorm/entities/MovimentType";
-import { ICreateMovimentTypeDTO, IMovimentTypesRepository } from "../IMovimentsTypes";
+import { ICreateMovimentTypeDTO, IMovimentTypesRepository } from "../IMovimentsRepositoryTypes";
 
 class MovimentTypeRespositoryInMemory implements IMovimentTypesRepository {
     

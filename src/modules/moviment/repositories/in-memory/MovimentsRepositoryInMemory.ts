@@ -1,5 +1,5 @@
 import { Moviment } from "@modules/moviment/infra/typeorm/entities/Moviment";
-import { ICreateMovimentDTO, IMovimentsRepository } from "../IMoviments";
+import { ICreateMovimentDTO, IMovimentsRepository } from "../IMovimentsRepository";
 
 class MovimentsRepositoryInMemory implements IMovimentsRepository {
     moviments: Moviment[] = []

@@ -1,17 +1,20 @@
-// import { ListBalanceUseCase } from "./ListBalanceUseCase";
+import { BalancesRepositoryInMemory } from "@modules/moviment/repositories/in-memory/BalancesRepositoryInMemory";
+import { ListBalanceUseCase } from "./ListBalanceUseCase";
 
 
-// let listBalanceUseCase: ListBalanceUseCase
+let listBalanceUseCase: ListBalanceUseCase
+let balanceRepository: BalancesRepositoryInMemory
 
-// describe( 'List Balance', () => {
-//     beforeEach(() => {
-//         listBalanceUseCase = new ListBalanceUseCase();
-//     })
+describe( 'List Balance', () => {
+    beforeEach(() => {
+        balanceRepository = new BalancesRepositoryInMemory();
+        listBalanceUseCase = new ListBalanceUseCase(balanceRepository);
+    })
 
-//     it('should be able to list the balance', async() => {
+    it('should be able to list the balance', async() => {
 
-//         const balance = []
+        const balance = []
 
-//         expect(balance).toHaveProperty('balance')
-//     })
-// })
+        expect(balance).toEqual([])
+    })
+})
