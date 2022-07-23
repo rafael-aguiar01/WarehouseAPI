@@ -5,13 +5,13 @@ class Moviment {
 
     description: string;
 
-    // type_moviment: string;
+    type_moviment: string;
 
-    // product_id: string;
+    product_id: string;
 
-    // quantity: number;
+    quantity: number;
 
-    // address_id: string;
+    address_id: string;
 
     constructor(){
         if(!this.id){
