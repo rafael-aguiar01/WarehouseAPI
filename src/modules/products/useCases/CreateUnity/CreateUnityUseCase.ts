@@ -1,12 +1,15 @@
+import { inject, injectable } from 'tsyringe';
+import { AppError } from '@shared/erros/AppError';
 import { IUnitsRepository } from '@modules/products/repositories/IUnitsRepository'
 
 interface IRequest {
     description: string;
 }
 
-class CreateUnitUseCase {
-
+@injectable()
+class CreateUnityUseCase {
     constructor(
+        @inject("UnitsRepository")
         private unitsRepository: IUnitsRepository
     ){}
 
@@ -14,7 +17,7 @@ class CreateUnitUseCase {
         const unitAlreadyExists = await this.unitsRepository.findByDescription(description);
 
         if(unitAlreadyExists){
-           throw new Error ("Unit already exists!")
+           throw new AppError ("Unit already exists!")
         }
 
         this.unitsRepository.create({ description });
@@ -22,4 +25,4 @@ class CreateUnitUseCase {
 }
 
 
-export { CreateUnitUseCase }
+export { CreateUnityUseCase }

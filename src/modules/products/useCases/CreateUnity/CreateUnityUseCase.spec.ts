@@ -1,14 +1,14 @@
 import { UnitsRepositoryInMemory } from "@modules/products/repositories/in-memory/UnitsRepositoryInMemory";
-import { CreateUnitUseCase } from "./CreateUnityUseCase";
+import { CreateUnityUseCase } from "./CreateUnityUseCase";
 
-let createUnitUseCase: CreateUnitUseCase;
+let createUnitUseCase: CreateUnityUseCase;
 let unitsRepositoryInMemory: UnitsRepositoryInMemory;
 
 describe ('Create Unit', () => {
 
     beforeEach(()=> {
         unitsRepositoryInMemory = new UnitsRepositoryInMemory();
-        createUnitUseCase = new CreateUnitUseCase(
+        createUnitUseCase = new CreateUnityUseCase(
             unitsRepositoryInMemory
         );
     })
