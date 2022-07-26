@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  database: #ESSE É O NOME DO SERVICE QUE DEVE ESTAR NO ARQUIVO DE CRIAÇÃO DE CONEXÃO
+    image: postgres
+    container_name: database_wh4
+    restart: always
+    ports: 
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=abc123!@
+      - POSTGRES_DB=warehouse
+    volumes:
+      - pgdata:/data/postgres
+
+volumes:
+  pgdata:
+    driver: local
