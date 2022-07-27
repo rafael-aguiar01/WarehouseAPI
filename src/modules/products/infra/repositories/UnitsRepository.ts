@@ -4,8 +4,7 @@ import { Unity } from "../typeorm/entities/Unity";
 
 class UnitsRepository 
     implements IUnitsRepository {
-        private repository: Repository<Unity>;
-    
+        private repository: Repository<Unity>;   
     private static INSTANCE: UnitsRepository;
 
     constructor(){
