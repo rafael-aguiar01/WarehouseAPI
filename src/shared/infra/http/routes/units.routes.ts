@@ -2,7 +2,7 @@ import { CreateUnityController } from "@modules/products/useCases/CreateUnity/Cr
 
 import { Router } from 'express';
 
-const unitsRoutes = Router ();
+const unitsRoutes = Router();
 
 const createUnityController = new CreateUnityController();
 

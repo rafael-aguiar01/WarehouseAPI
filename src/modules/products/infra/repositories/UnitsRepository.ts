@@ -26,11 +26,6 @@ class UnitsRepository
         throw new Error("Method not implemented.");
     }
     
-
-
-
-
-
 }
 
 export { UnitsRepository }
