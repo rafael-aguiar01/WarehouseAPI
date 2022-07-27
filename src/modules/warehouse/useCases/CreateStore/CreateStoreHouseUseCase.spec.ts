@@ -1,14 +1,14 @@
-import { StorehouseRepositoryInMemory } from "@modules/warehouse/repositories/in-memory/StoreHousesRepositoryInMemory";
-import { CreateStoreHouseUseCase } from "./CreateStoreHouseUseCase";
+import { StorehouseRepositoryInMemory } from "@modules/warehouse/repositories/in-memory/StorehousesRepositoryInMemory";
+import { CreateStorehouseUseCase } from "./CreateStorehouseUseCase";
 
 
-let createStoreHouseUseCase: CreateStoreHouseUseCase;
+let createStoreHouseUseCase: CreateStorehouseUseCase;
 let storeHouseRepositoryInMemory: StorehouseRepositoryInMemory;
 
 describe('Create Store', () => {
     beforeEach(() => {
         storeHouseRepositoryInMemory = new StorehouseRepositoryInMemory();
-        createStoreHouseUseCase = new CreateStoreHouseUseCase(
+        createStoreHouseUseCase = new CreateStorehouseUseCase(
             storeHouseRepositoryInMemory
         );
     })

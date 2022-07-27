@@ -1,12 +1,12 @@
 import { Storehouse } from "../infra/typeorm/entities/Storehouse";
 
-interface ICreateStoreHouseDTO{
+interface ICreateStorehouseDTO{
     name: string;
 }
 
-interface IStoreHouseRepository {
+interface IStorehouseRepository {
     findByName(name: string): Promise<Storehouse>;
-    create({ name }: ICreateStoreHouseDTO): Promise<void>
+    create({ name }: ICreateStorehouseDTO): Promise<void>
 }
 
-export { ICreateStoreHouseDTO, IStoreHouseRepository }
+export { ICreateStorehouseDTO, IStorehouseRepository }

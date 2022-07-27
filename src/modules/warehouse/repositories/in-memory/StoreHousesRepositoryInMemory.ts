@@ -1,11 +1,11 @@
 import { Storehouse  } from "@modules/warehouse/infra/typeorm/entities/Storehouse";
-import { IStoreHouseRepository, ICreateStoreHouseDTO } from "../IStoreHousesRepository";
+import { IStorehouseRepository, ICreateStorehouseDTO } from "../IStorehousesRepository";
 
-class StorehouseRepositoryInMemory implements IStoreHouseRepository {
+class StorehouseRepositoryInMemory implements IStorehouseRepository {
 
     storehouses: Storehouse[] = [];
 
-    async create({ name }: ICreateStoreHouseDTO): Promise<void> {
+    async create({ name }: ICreateStorehouseDTO): Promise<void> {
         const storehouse = new Storehouse();
 
         Object.assign(storehouse, {

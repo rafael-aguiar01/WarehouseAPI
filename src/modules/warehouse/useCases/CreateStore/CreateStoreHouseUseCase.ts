@@ -1,4 +1,4 @@
-import { IStoreHouseRepository } from "@modules/warehouse/repositories/IStoreHousesRepository";
+import { IStorehouseRepository } from "@modules/warehouse/repositories/IStorehousesRepository";
 import { AppError } from "shared/erros/AppError";
 import { inject, injectable } from 'tsyringe';
 
@@ -7,21 +7,21 @@ interface IRequest {
 }
 
 @injectable()
-class CreateStoreHouseUseCase {
+class CreateStorehouseUseCase {
     constructor(
-        @inject("StoreHouseRepository")
-        private storeHouseRepository: IStoreHouseRepository
+        @inject("StorehouseRepository")
+        private storehouseRepository: IStorehouseRepository
     ){}
 
     async execute ({ name }: IRequest): Promise<void>{
-        const storeHouseAlreadyExists = await this.storeHouseRepository.findByName(name);
+        const storehouseAlreadyExists = await this.storehouseRepository.findByName(name);
 
-        if(storeHouseAlreadyExists){
+        if(storehouseAlreadyExists){
             throw new AppError ("StoreHouse already exists!")
         }
 
-        this.storeHouseRepository.create({ name })
+        this.storehouseRepository.create({ name })
     }
 }
 
-export { CreateStoreHouseUseCase }
+export { CreateStorehouseUseCase }

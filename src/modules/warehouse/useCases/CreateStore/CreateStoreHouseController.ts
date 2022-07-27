@@ -1,17 +1,17 @@
 import { Request, Response } from 'express';
-import { CreateStoreHouseUseCase } from './CreateStoreHouseUseCase';
+import { CreateStorehouseUseCase } from './CreateStorehouseUseCase';
 import { container } from 'tsyringe';
 
-class CreateStoreHouseController{
+class CreateStorehouseController{
     async handle(request: Request, response: Response): Promise<Response>{
         const { name } = request.body;
 
-        const createStoreHouseUseCase = container.resolve(CreateStoreHouseUseCase);
+        const createStorehouseUseCase = container.resolve(CreateStorehouseUseCase);
 
-        await createStoreHouseUseCase.execute({ name });
+        await createStorehouseUseCase.execute({ name });
 
         return response.status(201).send();
     }
 }
 
-export { CreateStoreHouseController }
+export { CreateStorehouseController }
