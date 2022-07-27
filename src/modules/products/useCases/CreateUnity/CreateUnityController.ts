@@ -1,5 +1,5 @@
-import { Request, Response} from 'express'
-import { CreateUnityUseCase } from '@modules/products/useCases/CreateUnity/CreateUnityUseCase'
+import { Request, Response} from 'express';
+import { CreateUnityUseCase } from '@modules/products/useCases/CreateUnity/CreateUnityUseCase';
 import { container } from 'tsyringe';
 
 class CreateUnityController {
