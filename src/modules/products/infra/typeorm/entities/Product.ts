@@ -9,15 +9,21 @@ class Product {
     id?: string;
 
     @Column()
-    name: string;
+    description: string;
     
     @ManyToMany(() => Type)
     @JoinColumn({name: "type_id"})
     type: Type;
 
+    @Column()
+    type_id: string;
+
     @ManyToMany(() => Unity)
     @JoinColumn({name: "unit_id"})
-    unit: string;
+    unit: Unity;
+
+    @Column()
+    unit_id: string;
 
     @CreateDateColumn()
     created_at: Date;
