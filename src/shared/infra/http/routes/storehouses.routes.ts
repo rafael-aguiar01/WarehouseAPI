@@ -1,5 +1,4 @@
-import { CreateStorehouseController } from "@modules/warehouse/useCases/CreateStore/CreateStorehouseController";
-
+import { CreateStorehouseController } from '@modules/warehouse/useCases/CreateStore/CreateStoreHouseController';
 import { Router } from 'express';
 
 const storehouseRoutes = Router();
