@@ -14,7 +14,7 @@ export class CreateAnddress1659393089632 implements MigrationInterface {
                     },
                     {
                         name: "storehouse_id",
-                        type: "varchar",
+                        type: "uuid",
                     },
                     {
                         name: "code",
