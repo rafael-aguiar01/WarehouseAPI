@@ -34,6 +34,16 @@ export class CreateMoviment1659395023914 implements MigrationInterface {
                         type: "timestamp",
                         default: "now()",
                     }
+                ],
+                foreignKeys:[
+                    {
+                        name: "FKProduct",
+                        referencedTableName: "products",
+                        referencedColumnNames: ["id"],
+                        columnNames: ["product_id"],
+                        onDelete: "SET NULL",
+                        onUpdate: "SET NULL"
+                    }
                 ]
             })
         )
