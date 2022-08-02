@@ -12,12 +12,13 @@ class Moviment {
     @Column()
     type_moviment: boolean;
 
+    @Column()
     product_id: string;
 
     @Column()
     quantity: number;
 
-    
+    @Column()
     address_id: string;
 
     constructor(){

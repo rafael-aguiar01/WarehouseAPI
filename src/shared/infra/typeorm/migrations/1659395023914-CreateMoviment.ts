@@ -43,6 +43,14 @@ export class CreateMoviment1659395023914 implements MigrationInterface {
                         columnNames: ["product_id"],
                         onDelete: "SET NULL",
                         onUpdate: "SET NULL"
+                    },
+                    {
+                        name: "FKAddress",
+                        referencedTableName: "address",
+                        referencedColumnNames: ["id"],
+                        columnNames: ["address_id"],
+                        onDelete: "SET NULL",
+                        onUpdate: "SET NULL"
                     }
                 ]
             })
