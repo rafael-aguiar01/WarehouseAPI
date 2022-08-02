@@ -2,18 +2,29 @@ import { Balance } from "../infra/typeorm/entities/Balance";
 
 interface ICreateBalanceDTO{
     product_id: string;
-    product_name: string;
-    storehouse_description: string;
     balance: number;
 }
+
+interface IUpdateBalanceDTO{
+    product_id: string;
+    balanceUpdated: number;
+}
+
+interface IFindByProduct{
+    product_id: string;
+}
+
 interface IBalancesRepository{
     list(): Promise<Balance[]>
     create({ 
         product_id,
-        product_name,
-        storehouse_description,    
         balance,
     }:ICreateBalanceDTO ):Promise<void>
+    update({
+        product_id,
+        balanceUpdated,
+    }:IUpdateBalanceDTO ):Promise<void>
+    findByProduct({product_id}:IFindByProduct):Promise<Balance>
 }
 
-export { IBalancesRepository, ICreateBalanceDTO}
+export { IBalancesRepository, ICreateBalanceDTO, IUpdateBalanceDTO, IFindByProduct}
