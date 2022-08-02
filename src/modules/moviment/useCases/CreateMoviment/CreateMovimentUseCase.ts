@@ -37,9 +37,8 @@ class CreateMovimentUseCase {
 
         if(balanceAlreadyExists && entrance){
             let balanceActual = balanceAlreadyExists.balance
-            Number(balanceActual)
-
-            const balanceUpdated = balanceActual += quantity
+           
+            const balanceUpdated = quantity += Number(balanceActual)
             await this.balancesRepository.update({
                 product_id, 
                 balanceUpdated
@@ -47,8 +46,8 @@ class CreateMovimentUseCase {
         }
         if(balanceAlreadyExists && !entrance){
             let balanceActual = balanceAlreadyExists.balance
-            Number(balanceActual)
-            const balanceUpdated = balanceActual -= quantity
+        
+            const balanceUpdated = balanceActual -= quantity 
             await this.balancesRepository.update({
                 product_id, 
                 balanceUpdated
@@ -61,7 +60,5 @@ class CreateMovimentUseCase {
             })
         }
     }
-
 }
-
 export { CreateMovimentUseCase }
