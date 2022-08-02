@@ -1,6 +1,6 @@
 
 import { AddressRepositoryInMemory } from "@modules/warehouse/repositories/in-memory/AddresesRepositoryInMemory";
-import { CreateAddressInWarehouseUseCase } from "./CreateAddressInWarehouseUseCase";
+import { CreateAddressInWarehouseUseCase } from "./CreateAddressUseCase";
 
 let createAddressInWarehouseUseCase: CreateAddressInWarehouseUseCase;
 let addressRepositoryInMemory: AddressRepositoryInMemory;

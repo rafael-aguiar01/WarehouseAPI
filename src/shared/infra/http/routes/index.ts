@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { addressRoutes } from './address.routes';
 import { productRoutes } from './products.routes';
 import { storehouseRoutes } from './storehouses.routes';
 import { typesRoutes } from './types.routes';
@@ -10,5 +11,6 @@ router.use("/units", unitsRoutes);
 router.use("/types", typesRoutes);
 router.use("/storehouses",storehouseRoutes);
 router.use("/products",productRoutes);
+router.use("/address",addressRoutes);
 
 export { router }

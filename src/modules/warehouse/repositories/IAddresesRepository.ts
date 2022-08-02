@@ -1,12 +1,14 @@
 import { Address } from "@modules/warehouse/infra/typeorm/entities/Address";    
 
 interface ICreateAddressDTO{
-    name: string;
+    storehouse_id: string;
+    code: string;
+    capacity: number;
 }
 
 interface IAddressRepository {
-    findByName(name: string): Promise<Address>;
-    create({name}: ICreateAddressDTO): Promise<void>;
+    findByCode(code: string): Promise<Address>;
+    create({storehouse_id, code, capacity}: ICreateAddressDTO): Promise<void>;
 }
 
 export { ICreateAddressDTO, IAddressRepository }

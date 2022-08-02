@@ -26,8 +26,6 @@ class ProductRepository
                 type_id, 
                 unit_id 
             });
-            console.log(product)
-
             await this.repository.save(product)
         }
     }
