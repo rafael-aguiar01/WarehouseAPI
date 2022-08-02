@@ -10,6 +10,10 @@ import { IStorehouseRepository } from "@modules/warehouse/repositories/IStorehou
 import { StorehouseRepository } from "@modules/warehouse/infra/repositories/StorehousesRepository";
 import { AddressRepository } from "@modules/warehouse/infra/repositories/AdressesRepository";
 import { IAddressRepository } from "@modules/warehouse/repositories/IAddresesRepository";
+import { IMovimentsRepository } from "@modules/moviment/repositories/IMovimentsRepository";
+import { MovimentsRepository } from "@modules/moviment/infra/typeorm/repositories/MovimentsRepository";
+import { IBalancesRepository } from "@modules/moviment/repositories/IBalancesRepository";
+import { BalancesRepository } from "@modules/moviment/infra/typeorm/repositories/BalancesRepository";
 
 container.registerSingleton<IUnitsRepository>(
     "UnitsRepository",
@@ -34,4 +38,14 @@ container.registerSingleton<IProductsRepository>(
 container.registerSingleton<IAddressRepository>(
     "AddressRepository",
     AddressRepository
+);
+
+container.registerSingleton<IMovimentsRepository>(
+    "MovimentsRepository",
+    MovimentsRepository
+);
+
+container.registerSingleton<IBalancesRepository>(
+    "BalancesRepository",
+    BalancesRepository
 );
