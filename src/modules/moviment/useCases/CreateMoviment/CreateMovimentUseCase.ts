@@ -1,34 +1,60 @@
+import { IBalancesRepository } from "@modules/moviment/repositories/IBalancesRepository";
 import { IMovimentsRepository } from "@modules/moviment/repositories/IMovimentsRepository";
-
+import { inject, injectable } from "tsyringe";
 
 interface IRequest {
-    description: string;
-    type_moviment: string;
+    entrance: boolean;
     product_id: string;
     quantity: number;
     address_id: string
 }
 
+@injectable()
 class CreateMovimentUseCase {
 
     constructor(
-        private movimentsRepository: IMovimentsRepository
+        @inject("MovimentsRepository")
+        private movimentsRepository: IMovimentsRepository,
+        @inject("BalancesRepository")
+        private balancesRepository: IBalancesRepository
     ){}
 
     async execute ({ 
-      description, 
-      type_moviment, 
-      product_id, 
-      quantity, 
-      address_id
+        entrance, 
+        product_id, 
+        quantity, 
+        address_id 
     }: IRequest): Promise<void>{
+
         this.movimentsRepository.create({
-            description, 
-            type_moviment, 
+            entrance, 
             product_id, 
             quantity, 
-            address_id
+            address_id 
         })
+
+        const balanceAlreadyExists = await this.balancesRepository.findByProduct({product_id});
+
+        if(balanceAlreadyExists && entrance){
+            const balanceUpdated = balanceAlreadyExists.balance += quantity
+            await this.balancesRepository.update({
+                product_id, 
+                balanceUpdated
+            })
+        }
+        if(balanceAlreadyExists && !entrance){
+            const balanceUpdated = balanceAlreadyExists.balance -= quantity
+            await this.balancesRepository.update({
+                product_id, 
+                balanceUpdated
+            }) 
+        }
+        if(!balanceAlreadyExists){
+            await this.balancesRepository.create({
+                product_id, 
+                balance: quantity
+            })
+        }
     }
 
 }
