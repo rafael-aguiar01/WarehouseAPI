@@ -1,18 +1,16 @@
 import { Moviment } from "../infra/typeorm/entities/Moviment";
 
 interface ICreateMovimentDTO{
-   description: string;
-   type_moviment: string;
+   entrance: boolean;
    product_id: string;
    quantity: number;
    address_id: string; 
 }
 
 interface IMovimentsRepository{
-   findByDescription(description: string): Promise<Moviment>;
+   findById(id: string): Promise<Moviment>;
    create({ 
-      description, 
-      type_moviment, 
+      entrance, 
       product_id, 
       quantity, 
       address_id

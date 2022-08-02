@@ -9,10 +9,7 @@ class Moviment {
     id?: string;
 
     @Column()
-    description: string;
-
-    @Column()
-    type_moviment: boolean;
+    entrance: boolean;
 
     @ManyToMany(() => Product)
     @JoinColumn({name:"product_id"})
