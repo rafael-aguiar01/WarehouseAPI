@@ -2,7 +2,7 @@ import { IBalancesRepository, ICreateBalanceDTO, IUpdateBalanceDTO, IFindByProdu
 import { getRepository, Repository } from "typeorm";
 import { Balance } from "../entities/Balance";
 
-class BalanceRepository
+class BalancesRepository
     implements IBalancesRepository{
         private repository: Repository<Balance>;
 
@@ -37,4 +37,4 @@ class BalanceRepository
         }
     }
 
-    export { BalanceRepository }
+    export { BalancesRepository }

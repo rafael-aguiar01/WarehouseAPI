@@ -2,7 +2,7 @@ import { ICreateMovimentDTO, IMovimentsRepository } from "@modules/moviment/repo
 import { getRepository, Repository } from "typeorm";
 import { Moviment } from "../entities/Moviment";
 
-class MovimentRepository
+class MovimentsRepository
     implements IMovimentsRepository{
         private repository: Repository<Moviment>;
 
@@ -33,4 +33,4 @@ class MovimentRepository
         
     }
 
-export { MovimentRepository }
+export { MovimentsRepository }
