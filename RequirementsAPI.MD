@@ -7,7 +7,7 @@
     -> Não deve ser possível excluir uma unidade que foi lançada em uma movimentação [ ]
 
 # Cadastro do produto
-    -> Deve ser possível cadastrar um produto [ ]
+    -> Deve ser possível cadastrar um produto [X]
     -> Deve ser possível alterar um produto [  ]
     -> Deve ser possível excluir um produto [  ]
 
