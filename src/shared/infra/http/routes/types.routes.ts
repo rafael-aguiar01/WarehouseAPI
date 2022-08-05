@@ -13,7 +13,7 @@ typesRoutes.post(
     createProductTypeController.handle
 );
 
-typesRoutes.post(
+typesRoutes.delete(
     "/:id",
     deleteTypeController.handle
 );
