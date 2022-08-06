@@ -1,4 +1,5 @@
-import { IStorehouseRepository, ICreateStorehouseDTO } from "@modules/warehouse/repositories/IStorehousesRepository";
+
+import { ICreateStorehouseDTO, IStorehouseRepository } from "@modules/warehouse/repositories/IStoreHousesRepository";
 import { getRepository, Repository } from "typeorm";
 import { Storehouse } from "../typeorm/entities/Storehouse";
 

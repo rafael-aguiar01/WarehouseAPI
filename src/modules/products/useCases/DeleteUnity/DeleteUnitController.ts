@@ -8,9 +8,9 @@ class DeleteUnitController {
 
         const deleteUnitUseCase = container.resolve(DeleteUnityUseCase);
 
-        await deleteUnitUseCase.execute({ id })
+        await deleteUnitUseCase.execute({ id });
 
-        return response.status(201).send()
+        return response.status(201).send();
     }
 }
 
