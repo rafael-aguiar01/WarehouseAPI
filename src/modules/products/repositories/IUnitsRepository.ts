@@ -10,8 +10,9 @@ interface IDeleteUnityDTO{
 
 interface IUnitsRepository {
     findByDescription(description: string): Promise<Unity>;
+    findByID(id: string): Promise<Unity>;
     create({ description }: ICreatUnityDTO): Promise<void>;
-    delete({ id }: IDeleteUnityDTO): Promise<void>;
+    deleteByDescription({ id }: IDeleteUnityDTO): Promise<void>;
 }
 
 export { ICreatUnityDTO, IUnitsRepository, IDeleteUnityDTO }

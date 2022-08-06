@@ -10,6 +10,10 @@ class UnitsRepository
     constructor(){
         this.repository = getRepository(Unity)
     }
+    async findByID(id: string): Promise<Unity> {
+        const unity = await this.repository.findOne({id})
+        return unity;
+    }
     async findByDescription(description: string): Promise<Unity> {
         const unity = await this.repository.findOne({description})
         return unity;
@@ -21,8 +25,8 @@ class UnitsRepository
         await this.repository.save(unity)
     }
 
-    delete({ id }: IDeleteUnityDTO): Promise<void> {
-        throw new Error("Method not implemented.");
+    async deleteByDescription({ id }: IDeleteUnityDTO): Promise<void> {
+        await this.repository.delete(id)
     }
     
 }
