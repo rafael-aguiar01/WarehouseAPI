@@ -1,5 +1,5 @@
 
-import { ICreateStorehouseDTO, IStorehouseRepository } from "@modules/warehouse/repositories/IStoreHousesRepository";
+import { ICreateStorehouseDTO, IDeleteStorehouseDTO, IStorehouseRepository } from "@modules/warehouse/repositories/IStoreHousesRepository";
 import { getRepository, Repository } from "typeorm";
 import { Storehouse } from "../typeorm/entities/Storehouse";
 
@@ -11,6 +11,11 @@ class StorehouseRepository
         constructor(){
             this.repository = getRepository(Storehouse)
         }
+    async findById(id: string): Promise<Storehouse> {
+        const storehouse = await this.repository.findOne({ id });
+        return storehouse;
+    }
+    
     async findByName(name: string): Promise<Storehouse> {
         const storehouse = await this.repository.findOne({ name })
         return storehouse;
@@ -20,6 +25,9 @@ class StorehouseRepository
             name
         });
         await this.repository.save(storehouse)
+    }
+    async deleteById({ id }: IDeleteStorehouseDTO): Promise<void> {
+        await this.repository.delete(id);
     }      
     }
 

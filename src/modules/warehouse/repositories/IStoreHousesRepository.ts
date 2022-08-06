@@ -4,9 +4,15 @@ interface ICreateStorehouseDTO{
     name: string;
 }
 
-interface IStorehouseRepository {
-    findByName(name: string): Promise<Storehouse>;
-    create({ name }: ICreateStorehouseDTO): Promise<void>
+interface IDeleteStorehouseDTO{
+    id: string;
 }
 
-export { ICreateStorehouseDTO, IStorehouseRepository }
+interface IStorehouseRepository {
+    findByName(name: string): Promise<Storehouse>;
+    findById(id: string): Promise<Storehouse>;
+    create({ name }: ICreateStorehouseDTO): Promise<void>
+    deleteById({id}: IDeleteStorehouseDTO): Promise<void>;
+}
+
+export { ICreateStorehouseDTO, IStorehouseRepository, IDeleteStorehouseDTO }
