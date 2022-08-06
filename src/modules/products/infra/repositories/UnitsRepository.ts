@@ -25,7 +25,7 @@ class UnitsRepository
         await this.repository.save(unity)
     }
 
-    async deleteByDescription({ id }: IDeleteUnityDTO): Promise<void> {
+    async deleteById({ id }: IDeleteUnityDTO): Promise<void> {
         await this.repository.delete(id)
     }
     

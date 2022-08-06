@@ -12,7 +12,7 @@ interface IUnitsRepository {
     findByDescription(description: string): Promise<Unity>;
     findByID(id: string): Promise<Unity>;
     create({ description }: ICreatUnityDTO): Promise<void>;
-    deleteByDescription({ id }: IDeleteUnityDTO): Promise<void>;
+    deleteById({ id }: IDeleteUnityDTO): Promise<void>;
 }
 
 export { ICreatUnityDTO, IUnitsRepository, IDeleteUnityDTO }

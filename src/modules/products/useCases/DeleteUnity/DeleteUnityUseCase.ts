@@ -20,7 +20,7 @@ class DeleteUnityUseCase {
         if(!unitAlreadyExists){
             throw new AppError("Unit no exists!");
         }
-        this.unitsRepository.deleteByDescription({ id })
+        this.unitsRepository.deleteById({ id })
     }
 }
 
