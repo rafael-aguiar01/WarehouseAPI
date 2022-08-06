@@ -6,9 +6,15 @@ interface ICreateAddressDTO{
     capacity: number;
 }
 
-interface IAddressRepository {
-    findByCode(code: string): Promise<Address>;
-    create({storehouse_id, code, capacity}: ICreateAddressDTO): Promise<void>;
+interface IDeleteAddressDTO{
+    id: string;
 }
 
-export { ICreateAddressDTO, IAddressRepository }
+interface IAddressRepository {
+    findByCode(code: string): Promise<Address>;
+    findByID(id: string): Promise<Address>;
+    create({storehouse_id, code, capacity}: ICreateAddressDTO): Promise<void>;
+    deleteById({ id }: IDeleteAddressDTO): Promise<void>;
+}
+
+export { ICreateAddressDTO, IAddressRepository, IDeleteAddressDTO }
