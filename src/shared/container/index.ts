@@ -6,7 +6,7 @@ import { ITypesRepository } from "@modules/products/repositories/ITypesRepositor
 import { TypesRepository } from "@modules/products/infra/repositories/TypesRepository";
 import { IProductsRepository } from "@modules/products/repositories/IProductsRepository";
 import { ProductRepository } from "@modules/products/infra/repositories/ProductsRepository";
-import { IStorehouseRepository } from "@modules/warehouse/repositories/IStorehousesRepository";
+import { IStorehouseRepository } from "@modules/warehouse/repositories/IStoreHousesRepository";
 import { StorehouseRepository } from "@modules/warehouse/infra/repositories/StoreHousesRepository";
 import { AddressRepository } from "@modules/warehouse/infra/repositories/AdressesRepository";
 import { IAddressRepository } from "@modules/warehouse/repositories/IAddresesRepository";
@@ -14,6 +14,7 @@ import { IMovimentsRepository } from "@modules/moviment/repositories/IMovimentsR
 import { MovimentsRepository } from "@modules/moviment/infra/typeorm/repositories/MovimentsRepository";
 import { IBalancesRepository } from "@modules/moviment/repositories/IBalancesRepository";
 import { BalancesRepository } from "@modules/moviment/infra/typeorm/repositories/BalancesRepository";
+
 
 
 container.registerSingleton<IUnitsRepository>(
