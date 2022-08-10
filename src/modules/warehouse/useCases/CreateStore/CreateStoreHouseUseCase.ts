@@ -1,5 +1,5 @@
-import { IStorehouseRepository } from "@modules/warehouse/repositories/IStorehousesRepository";
-import { AppError } from "shared/erros/AppError";
+import { IStorehouseRepository } from "@modules/warehouse/repositories/IStoreHousesRepository";
+import { AppError } from "@shared/erros/AppError";
 import { inject, injectable } from 'tsyringe';
 
 interface IRequest {
