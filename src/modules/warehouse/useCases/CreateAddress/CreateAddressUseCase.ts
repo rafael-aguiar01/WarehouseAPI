@@ -19,7 +19,7 @@ class CreateAddressUseCase {
     async execute ({storehouse_id, code, capacity}: IRequest): Promise<void>{
         const addressAlreadyExists = await this.addressRepository.findByCode(code)
         if(addressAlreadyExists){
-            throw new AppError("Product already exists!")
+            throw new AppError("Address already exists!")
         }
         this.addressRepository.create({storehouse_id, code, capacity})
     }
