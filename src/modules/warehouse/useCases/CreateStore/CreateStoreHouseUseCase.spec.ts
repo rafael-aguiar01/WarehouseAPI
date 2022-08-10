@@ -1,24 +1,25 @@
 import { StorehouseRepositoryInMemory } from "@modules/warehouse/repositories/in-memory/StorehousesRepositoryInMemory";
+import { AppError } from "@shared/erros/AppError";
 import { CreateStorehouseUseCase } from "./CreateStorehouseUseCase";
 
 
-let createStoreHouseUseCase: CreateStorehouseUseCase;
+let createStorehouseUseCase: CreateStorehouseUseCase;
 let storeHouseRepositoryInMemory: StorehouseRepositoryInMemory;
 
-describe('Create Store', () => {
+describe('Create Storehouse', () => {
     beforeEach(() => {
         storeHouseRepositoryInMemory = new StorehouseRepositoryInMemory();
-        createStoreHouseUseCase = new CreateStorehouseUseCase(
+        createStorehouseUseCase = new CreateStorehouseUseCase(
             storeHouseRepositoryInMemory
         );
     })
 
-    it('should be able to create a new store', async() => {
+    it('should be able to create a new storehouse', async() => {
         const store = {
             name: "Armazem Padrão"
         };
 
-        await createStoreHouseUseCase.execute({
+        await createStorehouseUseCase.execute({
             name: store.name,
         })
 
@@ -28,4 +29,20 @@ describe('Create Store', () => {
 
         expect(storeCreated).toHaveProperty('id')
     })
+
+    it('should not be able to create a storehouse with exists name', async() => {
+        const store = {
+            name: "Armazem Padrão"
+        };
+
+        await createStorehouseUseCase.execute({
+            name: store.name,
+        })
+
+        await expect(createStorehouseUseCase.execute({
+            name: "Armazem Padrão"
+        })
+        ).rejects.toEqual(new AppError("StoreHouse already exists!"))
+    })
+
 })
