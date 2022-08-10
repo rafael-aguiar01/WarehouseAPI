@@ -23,8 +23,8 @@ class StorehouseRepositoryInMemory implements IStorehouseRepository {
         const storehouse = this.storehouses.find((storehouse) => storehouse.id === id);
         return storehouse;
     }
-    deleteById({ id }: IDeleteStorehouseDTO): Promise<void> {
-        throw new Error("Method not implemented.");
+    async deleteById({ id }: IDeleteStorehouseDTO): Promise<void> {
+        this.storehouses = this.storehouses.filter((storehouse) => storehouse.id !== id)
     }
 }
 
