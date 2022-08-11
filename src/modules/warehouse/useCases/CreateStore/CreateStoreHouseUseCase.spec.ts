@@ -1,4 +1,5 @@
-import { StorehouseRepositoryInMemory } from "@modules/warehouse/repositories/in-memory/StorehousesRepositoryInMemory";
+
+import { StorehouseRepositoryInMemory } from "@modules/warehouse/repositories/in-memory/StoreHousesRepositoryInMemory";
 import { AppError } from "@shared/erros/AppError";
 import { CreateStorehouseUseCase } from "./CreateStorehouseUseCase";
 
