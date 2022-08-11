@@ -1,20 +1,24 @@
+import { BalancesRepositoryInMemory } from "@modules/moviment/repositories/in-memory/BalancesRepositoryInMemory";
 import { MovimentsRepositoryInMemory } from "@modules/moviment/repositories/in-memory/MovimentsRepositoryInMemory";
 import { CreateMovimentUseCase } from "./CreateMovimentUseCase";
 
 let createMovimentUseCase: CreateMovimentUseCase;
 let movimentsRepositoryInMemory: MovimentsRepositoryInMemory;
+let balancesRepositoryInMemory: BalancesRepositoryInMemory;
+
 
 describe('Create Moviment', () => {
     beforeEach(() => {
         movimentsRepositoryInMemory = new MovimentsRepositoryInMemory();
         createMovimentUseCase = new CreateMovimentUseCase(
-            movimentsRepositoryInMemory
+            movimentsRepositoryInMemory,
+            balancesRepositoryInMemory
         );
     })
 
     it('should be able to create a new Moviment', async () => {
         const moviment = {
-            description: "Venda",
+            entrance: true,
             type_moviment: "SAIDA",
             product_id: "Peça",
             quantity: 2,
@@ -22,15 +26,14 @@ describe('Create Moviment', () => {
         };
 
         await createMovimentUseCase.execute({
-            description: moviment.description,
-            type_moviment: moviment.type_moviment,
+            entrance: moviment.entrance,
             product_id: moviment.product_id,
             quantity: moviment.quantity,
             address_id: moviment.address_id
         })
 
-        const movimentCreated = await movimentsRepositoryInMemory.findByDescription(
-            moviment.description
+        const movimentCreated = await movimentsRepositoryInMemory.findById(
+            
         )
 
         expect(movimentCreated).toHaveProperty('id')
