@@ -15,14 +15,18 @@ class UnitsRepositoryInMemory implements IUnitsRepository {
         this.units.push(unit);
     }
 
+    async findByID(id: string): Promise<Unity> {
+        const unit = this.units.find((unit) => unit.id === id);
+        return unit;
+    }
+
     async findByDescription(description: string): Promise<Unity> {
         const unit = this.units.find((unit) => unit.description === description);
         return unit;
     }
 
-    async delete({ id }: IDeleteUnityDTO): Promise<void> {
-        const newunits = this.units.filter((unit) => unit.id !== id)
-        this.units = newunits;
+    async deleteById({ id }: IDeleteUnityDTO): Promise<void> {
+        this.units = this.units.filter((unit) => unit.id !== id)
     }
 
 }

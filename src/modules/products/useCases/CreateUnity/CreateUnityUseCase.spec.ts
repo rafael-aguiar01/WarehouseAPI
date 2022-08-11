@@ -1,5 +1,6 @@
 import { UnitsRepositoryInMemory } from "@modules/products/repositories/in-memory/UnitsRepositoryInMemory";
 import { CreateUnityUseCase } from "./CreateUnityUseCase";
+import { AppError } from "@shared/erros/AppError";
 
 let createUnitUseCase: CreateUnityUseCase;
 let unitsRepositoryInMemory: UnitsRepositoryInMemory;
@@ -29,21 +30,6 @@ describe ('Create Unit', () => {
         expect(unitCreated).toHaveProperty('id')
     })
 
-        // it('should be able to delete a new unit', async () => {
-    //     const unitCreated = [];
-        
-    //     expect(unitCreated).toHaveProperty('id')
-
-    // })
-
-    // it('should be able to edit a new unit', async () => {
-    //     const unitCreated = [];
-        
-    //     expect(unitCreated).toHaveProperty('id')
-
-    // })
-
-
     it('should not be able create unit that already exists', async () => {
         const unit = {
             description: 'Test'
@@ -54,18 +40,9 @@ describe ('Create Unit', () => {
         });
 
         await expect(createUnitUseCase.execute({
-            description: unit.description
+            description: 'Test'
         })
-        ).rejects.toEqual(new Error('Unit already exists!'));
+        ).rejects.toEqual(new AppError("Unit already exists!"));
     })
-
-    // it('should not be able delete unit that already used', async () => {
-    //     const unitCreated = [];
-        
-    //     expect(unitCreated).toHaveProperty('id')
-
-    // })
-
-
 
 })
