@@ -1,17 +1,18 @@
 import { UnitsRepositoryInMemory } from "@modules/products/repositories/in-memory/UnitsRepositoryInMemory";
-import { CreateUnitUseCase } from "../CreateUnity/CreateUnityUseCase";
+import { CreateUnityUseCase } from "../CreateUnity/CreateUnityUseCase";
 import { DeleteUnityUseCase } from "./DeleteUnityUseCase";
+import { AppError } from "@shared/erros/AppError";
 
 let deleteUnityUseCase: DeleteUnityUseCase;
 let unitsRepositoryInMemory: UnitsRepositoryInMemory;
-let createUnitUseCase: CreateUnitUseCase;
+let createUnitUseCase: CreateUnityUseCase;
 
 describe('Delete Unit', () =>{
 
 
     beforeEach(()=> {
         unitsRepositoryInMemory = new UnitsRepositoryInMemory();
-        createUnitUseCase = new CreateUnitUseCase(
+        createUnitUseCase = new CreateUnityUseCase(
             unitsRepositoryInMemory
         );
         deleteUnityUseCase = new DeleteUnityUseCase(
@@ -42,5 +43,13 @@ describe('Delete Unit', () =>{
         
 
         expect(unitCreated).toEqual(undefined)
+    })
+
+
+    it('should not be able to delete a unity with exists name', async() => {
+
+        await expect(deleteUnityUseCase.execute({
+            id: "123132123"
+        })).rejects.toEqual(new AppError("Unit no exists!"))
     })
 })
