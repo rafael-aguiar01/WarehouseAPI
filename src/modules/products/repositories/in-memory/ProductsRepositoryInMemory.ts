@@ -1,23 +1,30 @@
 import { Product } from "@modules/products/infra/typeorm/entities/Product";
-import { IProductsRepository, ICreateProductDTO } from "../IProductsRepository";
+import { IProductsRepository, ICreateProductDTO, IDeleteProductDTO } from "../IProductsRepository";
 
 class ProductsRepositoryInMemory implements IProductsRepository{
 
     products: Product[] = [];
 
-    async create({ name, type, unit, storehouse}: ICreateProductDTO): Promise<void>{
+    async create({ description, type_id, unit_id}: ICreateProductDTO): Promise<void>{
         const product = new Product();
 
         Object.assign(product, {
-            name, type, unit, storehouse
+            description, type_id, unit_id
         });
 
         this.products.push(product);
     }
 
-    async findByName(name: string): Promise<Product> {
-        const product = this.products.find((product) => product.name === name);
+    async findByDescription(description: string): Promise<Product> {
+        const product = this.products.find((product) => product.description === description);
         return product;
+    }
+    async findByID(id: string): Promise<Product> {
+        const product = this.products.find((product) => product.id === id);
+        return product;
+    }
+    async deleteById({ id }: IDeleteProductDTO): Promise<void> {
+        this.products = this.products.filter((product) => product.id !== id)
     }
 }
 

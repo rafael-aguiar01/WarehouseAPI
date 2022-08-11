@@ -6,8 +6,7 @@ class MovimentsRepositoryInMemory implements IMovimentsRepository {
     moviments: Moviment[] = []
     balancesrepositoryInMemory = new BalancesRepositoryInMemory()
     
-    async create({  description,
-                    type_moviment, 
+    async create({  entrance,
                     product_id, 
                     quantity, 
                     address_id
@@ -15,8 +14,7 @@ class MovimentsRepositoryInMemory implements IMovimentsRepository {
         const moviment = new Moviment();
 
         Object.assign(moviment, {
-            description, 
-            type_moviment, 
+            entrance, 
             product_id, 
             quantity, 
             address_id
@@ -26,9 +24,9 @@ class MovimentsRepositoryInMemory implements IMovimentsRepository {
         
     }
 
-    async findByDescription(description: string): Promise<Moviment> {
-        const moviment = this.moviments.find((moviment) => moviment.description === description);
-        return moviment;
+    async findById(id: string): Promise<Moviment> {
+       const moviment = this.moviments.find((moviment) => moviment.id === id)
+       return moviment
     }
 }
 

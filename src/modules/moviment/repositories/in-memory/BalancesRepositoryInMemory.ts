@@ -1,11 +1,15 @@
 import { Balance } from "@modules/moviment/infra/typeorm/entities/Balance";
-import { IBalancesRepository, ICreateBalanceDTO } from "../IBalancesRepository";
+import { IBalancesRepository, ICreateBalanceDTO, IFindByProduct, IUpdateBalanceDTO } from "../IBalancesRepository";
 
 class BalancesRepositoryInMemory implements IBalancesRepository {
+    update({ product_id, balanceUpdated, }: IUpdateBalanceDTO): Promise<void> {
+        throw new Error("Method not implemented.");
+    }
+    findByProduct({ product_id }: IFindByProduct): Promise<Balance> {
+        throw new Error("Method not implemented.");
+    }
     create({ 
         product_id, 
-        product_name, 
-        storehouse_description, 
         balance, 
     }: ICreateBalanceDTO): Promise<void> {
         throw new Error("Method not implemented.");
