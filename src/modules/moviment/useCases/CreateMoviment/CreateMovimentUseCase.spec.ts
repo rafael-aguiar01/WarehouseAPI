@@ -10,6 +10,7 @@ let balancesRepositoryInMemory: BalancesRepositoryInMemory;
 describe('Create Moviment', () => {
     beforeEach(() => {
         movimentsRepositoryInMemory = new MovimentsRepositoryInMemory();
+        balancesRepositoryInMemory = new BalancesRepositoryInMemory();
         createMovimentUseCase = new CreateMovimentUseCase(
             movimentsRepositoryInMemory,
             balancesRepositoryInMemory
@@ -32,10 +33,8 @@ describe('Create Moviment', () => {
             address_id: moviment.address_id
         })
 
-        const movimentCreated = await movimentsRepositoryInMemory.findById(
-            
-        )
-
-        expect(movimentCreated).toHaveProperty('id')
+        const movimentCreated = await movimentsRepositoryInMemory.balancesrepositoryInMemory
+        
+        expect(movimentCreated).toHaveProperty('balance')
     })
 });
