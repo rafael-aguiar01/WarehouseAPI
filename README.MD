@@ -1,12 +1,11 @@
 <h1>WarehouseAPI</h1> 
 
 <p align="center">
-  <img src="https://img.shields.io/badge/node--lts-%3E%3D%206.0.0-brightgreen"/>
   <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge"/>
    <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
 </p>
 
-> Status do Projeto: :heavy_check_mark: :warning: (em desenvolvimento)
+> Status do Projeto:  :warning: (em desenvolvimento)
 
 ### Tópicos 
 
