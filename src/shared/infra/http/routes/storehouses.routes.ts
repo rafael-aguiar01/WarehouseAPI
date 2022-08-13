@@ -1,4 +1,5 @@
-import { CreateStorehouseController } from '@modules/warehouse/useCases/CreateStore/CreateStoreHouseController';
+
+import { CreateStorehouseController } from '@modules/warehouse/useCases/CreateStore/CreateStorehouseController';
 import { DeleteStorehouseController } from '@modules/warehouse/useCases/DeleteStore/DeleteStorehouseController';
 import { Router } from 'express';
 

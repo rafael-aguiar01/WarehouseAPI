@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { CreateStorehouseUseCase } from './CreateStorehouseUseCase';
 import { container } from 'tsyringe';
+import { CreateStorehouseUseCase } from './CreateStorehouseUseCase';
 
 class CreateStorehouseController{
     async handle(request: Request, response: Response): Promise<Response>{
