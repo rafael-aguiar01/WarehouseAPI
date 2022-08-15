@@ -26,7 +26,7 @@ Insira os tópicos do README em links para facilitar a navegação do leitor -->
 ## Descrição do projeto 
 
 <p align="justify">
-  WarehouseAPI é uma API para o controle de estoque, com cadastro de produto, cadastro de armazém, movimentos de entrada e saída e controle do saldo dos produtos
+  WarehouseAPI é uma API para o controle de estoque, com cadastro de produto, cadastro de armazém, movimentos de entrada e saída e controle do saldo dos produtos.
 </p>
 
 ## Funcionalidades
