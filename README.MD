@@ -92,7 +92,7 @@ Se quiser, coloque uma amostra do banco de dados  -->
 
 ## Iniciando/Configurando banco de dados
 
-<!-- Se for necessário configurar algo antes de iniciar o banco de dados insira os comandos a serem executados  -->
+
 
 ## Linguagens, dependencias e libs utilizadas :books:
 
